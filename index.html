@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row-xs">
+            <div class="col-6">
+                <label for="first number" class="number-label">First Number:</label><br>
+                <input type="number" name="first-number" class="form-control numbers" id="num1" ><br>
+            </div>
+            <div class="col-6">
+                <label for="second number" class="number-label">Second Number:</label><br>
+                <input type="number" name="second-number" class="form-control numbers" id="num2" ><br><br>
+            </div>
+        </div>
+        <div>
+            <label for="">Answer:</label><span id="answer"></span>
+        </div>
+        <div>
+            <button type="button" name="add" id="add-number" class="form-control btn-primary" onclick="addNumbers()">Add Number</button>
+        </div>
+    </div>
+</body>
+<script>
+    //document.getElementById("num1").style.background ="red";
+    //answer = parseInt(num1) + parsentInt(num2);
+
+    function addNumbers(){
+        var num1 = 0, num2 = 0, answer = 0;
+        num1 = document.getElementById("num1").value;
+        num2 = document.getElementById("num2").value;
+        answer = parseInt(num1) + parseInt(num2);
+        document.getElementById("answer").textContent = answer;
+        determineEvenOrOdd(answer);
+        getHigherNumber(num1, num2);
+}
+
+    function determineEvenOrOdd(value) {
+        if(value % 2 == 0){
+            console.log("Number is even.")
+        } else {
+            console.log("Number is odd.")
+        }
+    }
+    function getHigherNumber(n1, n2){
+        if(parseInt(n1) > parseInt(n2)){
+            console.log(n1 + " is higher.")
+        } else {
+            console.log(n2 + " is higher")
+        }
+    }
+
+
+/*cosole.log("Sum of " + num1 + " and " + num2 + " is " + answer);*/
+</script>
+</html>
